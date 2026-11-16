@@ -16,3 +16,5 @@ t = Thing()
 print("Outside the function:", sys.getrefcount(t) - 1)
 inspect(t)
 print("After it returns:    ", sys.getrefcount(t) - 1)
+
+

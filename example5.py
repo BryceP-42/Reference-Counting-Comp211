@@ -22,3 +22,5 @@ print("c = a.copy()          ->", sys.getrefcount(inner) - 1)
 d = copy.deepcopy(a)
 print("d = copy.deepcopy(a)  ->", sys.getrefcount(inner) - 1)
 print("Is d[0] the same object as inner?", d[0] is inner)
+
+

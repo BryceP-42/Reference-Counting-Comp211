@@ -21,3 +21,5 @@ print("After deleting:", sys.getrefcount(t) - 1)
 
 items.clear()
 print("After items.clear():", sys.getrefcount(t) - 1)
+
+
