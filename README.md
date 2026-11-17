@@ -18,7 +18,7 @@ Reference Counting is the main garbage collection mechanism in CPython. Each obj
 ## How it works:
 
 What changes the count
-
+```python
 Action                                 |       Effect on count
 ------------------------------------------------------------------------
 x = obj name                           |    +1
@@ -28,7 +28,7 @@ Passing obj into a function            |    +1 while the function runs
 del x, rebinding x = something_else    |    -1
 Container is clearned or itself freed  |    -1 per slot removed
 Function returns                       |    -1
-
+```
 Note: When an objects count reaches 0, it is freed, and the objects it referenced each lose one reference, and if any of those his 0 they are freed too.
 
 ## Drawbacks
