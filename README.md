@@ -13,7 +13,6 @@ Reference Counting is the main garbage collection mechanism in CPython. Each obj
 ## What it is used for:
     - automatically freeing memory
     - deciding when an object isn't needed, when it is inaccessible
-    - 
 
 ## How it works:
 
@@ -43,7 +42,9 @@ del container                 # the name is gone, but the list still references 
 
 The object becomes unreachable because the list's count never reaches 0, but the reference to it that isn't itself is gone.
 
-Cyclic garbage collector: 
+Cyclic garbage collector: an automatic memory management mechanism that detects and frees memory occupied by reference cycles.
+
+Reference cycles: groups of objects in memory that point to each other in a closed loop.
 
 CPython has a cyclic garbage collector that finds objects that are only reachable from each other, and frees them.
     - lives in the gc module and only deals with container objects.
@@ -70,4 +71,6 @@ CPython has a cyclic garbage collector that finds objects that are only reachabl
         - gc.collect()  runs the cyclic collector now
         - gc.disable()  turns off automatic cyclic collection
         - gc.enable()   turns it on
+
+
     
